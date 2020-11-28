@@ -1,10 +1,10 @@
-package usantatecla;
+package amartinm;
 
-public class ClosedMaxTest extends MaxTest {
+public class ClosedMinTest extends MinTest {
 
     @Override
     protected Limit createLimit() {
-        return new ClosedMax(this.point.getEquals());
+        return new ClosedMin(this.point.getEquals());
     }
 
     @Override

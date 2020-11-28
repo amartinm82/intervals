@@ -1,14 +1,15 @@
-package usantatecla;
+package amartinm;
 
-public class MinTest extends LimitTest {
+public class MaxTest extends LimitTest {
 
+    @Override
     protected Limit createLimit() {
-        return new Min(this.point.getEquals());
+        return new Max(this.point.getEquals());
     }
 
     @Override
     protected boolean isWithinWithLessValue() {
-        return false;
+        return true;
     }
 
     @Override
@@ -18,8 +19,7 @@ public class MinTest extends LimitTest {
 
     @Override
     protected boolean isWithinWithGreaterValue() {
-        return true;
+        return false;
     }
 
 }
-

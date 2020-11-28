@@ -1,4 +1,4 @@
-package usantatecla;
+package amartinm;
 
 public class Point {
 

@@ -1,4 +1,4 @@
-package usantatecla;
+package amartinm;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

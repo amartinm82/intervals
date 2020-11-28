@@ -3,14 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>usantatecla</groupId>
+    <groupId>amartinm</groupId>
     <artifactId>intervals</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}.${project.artifactId}</name>
-    <description>TDD con la jerarquía de intervalos abierto/cerrado</description>
-    <url>https://github.com/USantaTecla/intervals.git</url>
+    <description>Práctica de intervalos del máster para hacer TDD</description>
+    <url>https://github.com/amartinm82/intervals/</url>
 
     <licenses>
         <license>
@@ -21,11 +21,10 @@
 
     <developers>
         <developer>
-            <name>Luis Fernández</name>
-            <id>Setillo</id>
-            <email>setillofm@gmail.com</email>
-            <organization>USantaTecla</organization>
-            <organizationUrl>http://usantatecla.com</organizationUrl>
+            <name>Álvaro Martín</name>
+            <id>amartinm</id>
+            <email>amartinm82@gmail.com</email>
+            <organization>amartinm</organization>
         </developer>
     </developers>
 
@@ -47,7 +46,7 @@
         <jacoco.version>0.8.5</jacoco.version>
         <!-- JUnit -->
         <junit.platform.version>1.2.0</junit.platform.version>
-		<!-- various -->
+        <!-- various -->
         <itextpdf.version>7.0.2</itextpdf.version>
     </properties>
 
