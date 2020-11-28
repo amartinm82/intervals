@@ -85,14 +85,14 @@ public class IntervalTest {
     @Test
     public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalOpenOpenByTheLeftThenReturnFalse() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
-        Interval intersectedInterval = intervalBuilder().open(left.getLess()).open(left.getLess()).build();
+        Interval intersectedInterval = intervalBuilder().open(left.getLess()).open(left.getEquals()).build();
         assertFalse(interval.isIntersected(intersectedInterval));
     }
 
     @Test
     public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalOpenOpenByTheRightThenReturnFalse() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
-        Interval intersectedInterval = intervalBuilder().open(right.getGreater()).open(right.getGreater()).build();
+        Interval intersectedInterval = intervalBuilder().open(right.getEquals()).open(right.getGreater()).build();
         assertFalse(interval.isIntersected(intersectedInterval));
     }
 
