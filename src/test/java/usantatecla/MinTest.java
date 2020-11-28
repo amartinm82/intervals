@@ -1,40 +1,25 @@
 package usantatecla;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+public class MinTest extends EndTest {
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+    protected End createEnd() {
+        return new Min(this.point.getEquals());
+    }
 
-public class MinTest {
-  
-  protected Min min;
-  protected Point point;
+    @Override
+    protected boolean isWithinWithLessValue() {
+        return false;
+    }
 
-  @BeforeEach
-  public void before(){
-    this.point = new Point(4.4);
-    this.min = this.createMin();
-  }
+    @Override
+    protected boolean isWithinWithEqualsValue() {
+        return false;
+    }
 
-  protected Min createMin() {
-    return new Min(this.point.getEquals());
-  }
+    @Override
+    protected boolean isWithinWithGreaterValue() {
+        return true;
+    }
 
-  @Test
-  public void givenMinWhenIsWithinWithLessValueThenTrue(){
-    assertFalse(this.min.isWithin(this.point.getLess()));
-  }
-
-  @Test
-  public void givenMinWhenIsWithinWithEqualsValue(){
-    assertFalse(this.min.isWithin(this.point.getEquals()));
-  }
-
-  @Test
-  public void givenMinWhenIsWithinWithGreaterValueThenTrue(){
-    assertTrue(this.min.isWithin(this.point.getGreater()));
-  }
- 
 }
 

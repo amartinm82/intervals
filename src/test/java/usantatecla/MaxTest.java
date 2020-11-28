@@ -1,39 +1,25 @@
 package usantatecla;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+public class MaxTest extends EndTest {
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+    @Override
+    protected End createEnd() {
+        return new Max(this.point.getEquals());
+    }
 
-public class MaxTest {
-  
-  protected Max max;
-  protected Point point;
+    @Override
+    protected boolean isWithinWithLessValue() {
+        return true;
+    }
 
-  @BeforeEach
-  public void before(){
-    this.point = new Point(4.4);
-    this.max = this.createMax();
-  }
+    @Override
+    protected boolean isWithinWithEqualsValue() {
+        return false;
+    }
 
-  protected Max createMax() {
-    return new Max(this.point.getEquals());
-  }
+    @Override
+    protected boolean isWithinWithGreaterValue() {
+        return false;
+    }
 
-  @Test
-  public void givenMaxWhenIsWithinWithLessValueThenTrue(){
-    assertTrue(this.max.isWithin(this.point.getLess()));
-  }
-
-  @Test
-  public void givenMaxWhenIsWithinWithEqualsValue(){
-    assertFalse(this.max.isWithin(this.point.getEquals()));
-  }
-
-  @Test
-  public void givenMaxWhenIsWithinWithGreaterValueThenTrue(){
-    assertFalse(this.max.isWithin(this.point.getGreater()));
-  }
- 
 }
