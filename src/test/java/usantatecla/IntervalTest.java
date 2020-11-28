@@ -69,28 +69,28 @@ public class IntervalTest {
     }
 
     @Test
-    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalByTheLeftThenReturnTrue() {
+    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalOpenOpenByTheLeftThenReturnTrue() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
         Interval intersectedInterval = intervalBuilder().open(left.getLess()).open(right.getLess()).build();
         assertTrue(interval.isIntersected(intersectedInterval));
     }
 
     @Test
-    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalByTheRightThenReturnTrue() {
+    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalOpenOpenByTheRightThenReturnTrue() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
         Interval intersectedInterval = intervalBuilder().open(right.getLess()).open(right.getGreater()).build();
         assertTrue(interval.isIntersected(intersectedInterval));
     }
 
     @Test
-    public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalByTheLeftThenReturnFalse() {
+    public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalOpenOpenByTheLeftThenReturnFalse() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
         Interval intersectedInterval = intervalBuilder().open(left.getLess()).open(left.getLess()).build();
         assertFalse(interval.isIntersected(intersectedInterval));
     }
 
     @Test
-    public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalByTheRightThenReturnFalse() {
+    public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalOpenOpenByTheRightThenReturnFalse() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
         Interval intersectedInterval = intervalBuilder().open(right.getGreater()).open(right.getGreater()).build();
         assertFalse(interval.isIntersected(intersectedInterval));
