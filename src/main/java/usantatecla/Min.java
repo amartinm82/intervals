@@ -1,6 +1,6 @@
 package usantatecla;
 
-public class Min extends End {
+public class Min extends Limit {
 
     public Min(double value) {
         super(value);

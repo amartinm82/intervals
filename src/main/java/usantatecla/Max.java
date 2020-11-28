@@ -1,6 +1,6 @@
 package usantatecla;
 
-public class Max extends End {
+public class Max extends Limit {
 
     public Max(double value) {
         super(value);

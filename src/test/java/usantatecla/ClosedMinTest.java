@@ -3,7 +3,7 @@ package usantatecla;
 public class ClosedMinTest extends MinTest {
 
     @Override
-    protected End createEnd() {
+    protected Limit createLimit() {
         return new ClosedMin(this.point.getEquals());
     }
 

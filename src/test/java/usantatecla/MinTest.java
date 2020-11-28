@@ -1,8 +1,8 @@
 package usantatecla;
 
-public class MinTest extends EndTest {
+public class MinTest extends LimitTest {
 
-    protected End createEnd() {
+    protected Limit createLimit() {
         return new Min(this.point.getEquals());
     }
 

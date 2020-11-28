@@ -1,9 +1,9 @@
 package usantatecla;
 
-public class MaxTest extends EndTest {
+public class MaxTest extends LimitTest {
 
     @Override
-    protected End createEnd() {
+    protected Limit createLimit() {
         return new Max(this.point.getEquals());
     }
 

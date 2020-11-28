@@ -3,7 +3,7 @@ package usantatecla;
 public class ClosedMaxTest extends MaxTest {
 
     @Override
-    protected End createEnd() {
+    protected Limit createLimit() {
         return new ClosedMax(this.point.getEquals());
     }
 

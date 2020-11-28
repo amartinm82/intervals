@@ -1,10 +1,10 @@
 package usantatecla;
 
-public abstract class End {
+public abstract class Limit {
 
     protected double value;
 
-    public End(double value) {
+    public Limit(double value) {
         this.value = value;
     }
 
@@ -28,7 +28,7 @@ public abstract class End {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        End other = (End) obj;
+        Limit other = (Limit) obj;
         if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
             return false;
         return true;
