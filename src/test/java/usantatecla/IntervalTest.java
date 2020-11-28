@@ -96,4 +96,32 @@ public class IntervalTest {
         assertFalse(interval.isIntersected(intersectedInterval));
     }
 
+    @Test
+    public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalOpenCloseByTheLeftThenReturnFalse() {
+        Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
+        Interval intersectedInterval = intervalBuilder().open(left.getLess()).closed(left.getEquals()).build();
+        assertFalse(interval.isIntersected(intersectedInterval));
+    }
+
+    @Test
+    public void givenIntervalOpenOpenWhenIsIntersectedWithNotIntersectedIntervalCloseOpenByTheRightThenReturnFalse() {
+        Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
+        Interval intersectedInterval = intervalBuilder().closed(right.getEquals()).open(right.getGreater()).build();
+        assertFalse(interval.isIntersected(intersectedInterval));
+    }
+
+    @Test
+    public void givenIntervalCloseOpenWhenIsIntersectedWithNotIntersectedIntervalOpenOpenByTheLeftThenReturnFalse() {
+        Interval interval = intervalBuilder().closed(left.getEquals()).open(right.getEquals()).build();
+        Interval intersectedInterval = intervalBuilder().open(left.getLess()).open(left.getEquals()).build();
+        assertFalse(interval.isIntersected(intersectedInterval));
+    }
+
+    @Test
+    public void givenIntervalOpenCloseWhenIsIntersectedWithNotIntersectedIntervalOpenOpenByTheRightThenReturnFalse() {
+        Interval interval = intervalBuilder().open(left.getEquals()).closed(right.getEquals()).build();
+        Interval intersectedInterval = intervalBuilder().open(right.getEquals()).open(right.getGreater()).build();
+        assertFalse(interval.isIntersected(intersectedInterval));
+    }
+
 }
