@@ -145,4 +145,11 @@ public class IntervalTest {
         assertTrue(interval.intersects(intersectedInterval));
     }
 
+    @Test
+    public void givenIntervalOpenOpenWhenIntersectsWithIntervalOpenOpenThatFullyContainsIntervalThenReturnTrue() {
+        Interval interval = intervalBuilder().open(left.getEquals()).closed(right.getEquals()).build();
+        Interval intersectedInterval = intervalBuilder().open(left.getLess()).closed(right.getGreater()).build();
+        assertTrue(interval.intersects(intersectedInterval));
+    }
+
 }
