@@ -69,10 +69,19 @@ public class IntervalTest {
     }
 
     @Test
-    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalThenReturnTrue() {
+    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalByTheLeftThenReturnTrue() {
         Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
         Interval intersectedInterval = intervalBuilder().open(left.getLess()).open(right.getLess()).build();
         assertTrue(interval.isIntersected(intersectedInterval));
     }
+
+    @Test
+    public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedIntervalByTheRightThenReturnTrue() {
+        Interval interval = intervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
+        Interval intersectedInterval = intervalBuilder().open(right.getLess()).open(right.getGreater()).build();
+        assertTrue(interval.isIntersected(intersectedInterval));
+    }
+
+
 
 }
