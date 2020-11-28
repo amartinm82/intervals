@@ -69,7 +69,7 @@ public class IntervalTest {
     @Test
     public void givenIntervalOpenOpenWhenIsIntersectedWithIntersectedValueThenReturnTrue() {
         Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
-        Interval intersectedInterval = this.intervalBuilder.open(left.getLess()).open(right.getLess()).build();
+        Interval intersectedInterval = new IntervalBuilder().open(left.getLess()).open(right.getLess()).build();
         assertTrue(interval.isIntersected(intersectedInterval));
     }
 
