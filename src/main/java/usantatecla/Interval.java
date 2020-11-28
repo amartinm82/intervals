@@ -15,23 +15,12 @@ public class Interval {
         return this.min.isWithin(value) && this.max.isWithin(value);
     }
 
-    public boolean isIntersected(Interval interval) {
-        if (interval.max instanceof Max) {
-            if (interval.max.value <= this.min.value)
-                return false;
-        } else {
-            if (interval.max.value < this.min.value)
-                return false;
-        }
-        if (interval.min instanceof Min) {
-            if (interval.min.value >= this.max.value)
-                return false;
-        } else {
-            if (interval.min.value > this.max.value)
-                return false;
-        }
+    public boolean intersects(Interval interval) {
+        if (!interval.max.isWithin(this.min.value) || !interval.min.isWithin(this.max.value))
+            return false;
         return this.include(interval.min.value) || this.include(interval.max.value);
     }
+
 
     @Override
     public int hashCode() {
