@@ -16,9 +16,11 @@ public class Interval {
     }
 
     public boolean intersects(Interval interval) {
+        if (this.equals(interval))
+            return true;
         if (!interval.max.isWithin(this.min.value) || !interval.min.isWithin(this.max.value))
             return false;
-        return this.equals(interval) || this.include(interval.min.value) || this.include(interval.max.value);
+        return this.include(interval.min.value) || this.include(interval.max.value);
     }
 
 
